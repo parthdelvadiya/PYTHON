@@ -6,7 +6,7 @@ def count(st):
         if i in freq:
             freq[i]=freq[i]+1
         else:
-            freq[i]=1
+            freq[i]=1   
             
     for key,value in freq.items():
         if value>max_len:
