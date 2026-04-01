@@ -1,0 +1,48 @@
+ReLU vs Sigmoid (Activation Functions)
+    In neural networks, activation functions decide whether a neuron should be activated or not.
+    
+    Sigmoid Function
+    📌 Definition:
+        The Sigmoid function converts any value into a range between 0 and 1.
+        𝜎(x)=1/1+(e^-x)
+        Good for probability output (like binary classification)
+        Output layer for binary classification (e.g., spam detection)
+        Output Range = (0, 1)
+        SLOW
+
+    ReLU (Rectified Linear Unit)
+    📌 Definition:
+        ReLU outputs the value directly if positive, otherwise 0.
+        𝑓(𝑥)=max(0,𝑥)
+        Output Range = [0, ∞)
+z
+        Dying ReLU problem (neurons can become permanently 0)
+        Works well in deep neural networks
+        FAST
+
+Confusion Matrix
+    A confusion matrix is a table used to measure how well 
+    a classification model is performing by comparing
+
+    |                 | Predicted Positive | Predicted Negative |
+    | --------------- | ------------------ | ------------------ |
+    | Actual Positive | TP                 | FN                 |
+    | Actual Negative | FP                 | TN                 |
+
+    Because it shows where the model is getting confused
+
+    Accuracy
+👉 Overall correctness
+    Accuracy = TP+TN / FP+FN + TP+TN​
+
+    Precision
+👉 Out of predicted positives, how many are correct?
+    Precision = TP / FP+TP​
+
+    Recall (Sensitivity)
+👉 Out of actual positives, how many did we catch?
+    Recall = TP / FN+TP​
+
+    F1 Score
+👉 Balance between Precision & Recall
+    F1 = 2⋅(Precision * Recall) / Precision + Recall​
