@@ -6,7 +6,7 @@
 
 2> {1, 2, 3} & {1, 4}
     {1} => returns intersection
-`	Union  {1,2} ` {3,4} = {1,2,3,4}
+|	Union  {1,2} | {3,4} = {1,2,3,4}
 -	Difference	{1,2} - {2,3} = {1}
 ^	Symmetric diff	{1,2} ^ {2,3} = {1,3}
 

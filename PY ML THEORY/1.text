@@ -46,3 +46,31 @@ Confusion Matrix
     F1 Score
 👉 Balance between Precision & Recall
     F1 = 2⋅(Precision * Recall) / Precision + Recall​
+
+
+Global Interpreter Lock (GIL)
+    The GIL is a mutex that allows only one thread to hold control 
+    of the Python interpreter at a time.
+
+Why is the ReLU activation function generally preferred over Sigmoid in Deep Learning?
+    ReLU is preferred over Sigmoid because it trains faster and avoids the vanishing gradient problem.
+    
+    Sigmoid:
+        Output range: (0, 1)
+        For very large or very small inputs → gradient becomes almost zero
+        
+        Uses exponential → slow
+            1 / (1 + e^-x)
+        
+        👉 This causes:
+            Slow learning
+            Deep networks stop updating weights
+
+    ReLU:
+        We define it as:
+        𝑓(𝑥)=max(0,𝑥)
+        Simple comparison fast process
+        
+        If 𝑥>0 → gradient = 1 ✅
+        
+        No shrinking of gradients → faster learning
