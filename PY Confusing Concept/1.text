@@ -74,3 +74,8 @@
 9> Difference between is and ==?
     is → memory reference
     == → value comparison
+
+
+10> Public      ==>   var
+    Protected   ==>   _var
+    Private     ==>   __var

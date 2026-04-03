@@ -29,3 +29,28 @@ print(type(lambda x: x))
 
 print(True + True) # 2
 print(False + True) # 1
+
+print(bool([]), bool([0]))
+# False True
+# An empty list is considered False in Python.
+# Even though it contains 0 (which is False individually), the list itself is not empty, so it is True.
+# Non-empty containers → True
+
+print([0], [False], [""])
+# True,True,True
+
+print(None == False)
+# False
+
+import numpy as np
+
+c = np.array([1, 2, 3])
+d = c[1:]
+d[0] = 99
+
+print(c)
+# [ 1 99  3]
+# d = c[1:] creates a view, not a copy.
+# So d and c share the same memory.
+# c = [1, 2, 3]
+# d = [2, 3] (view of c)
