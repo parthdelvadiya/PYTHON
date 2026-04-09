@@ -1,3 +1,88 @@
+What is AI?
+    Artificial Intelligence (AI) is the ability of machines to perform tasks that normally 
+    require human intelligence.
+
+What is Machine Learning (ML)?
+    ML is a subset of AI where machines learn from data instead of being explicitly programmed.
+    
+    Example:
+        Spam detection
+        Recommendation systems
+    Interview Answer:
+        “Machine Learning is a technique where systems learn patterns from data and 
+        improve their performance without explicit programming.”
+
+What is Deep Learning?
+    Deep Learning is a subset of ML that uses neural networks with many layers.
+    
+    Example:
+        Image recognition
+        Speech recognition
+        LLMs (like GPT)
+
+    ✅ Interview Answer:
+        “Deep Learning uses multi-layered neural networks to learn complex patterns 
+        from large amounts of data.”
+
+What is a model?
+    A model is a mathematical function that learns patterns from data.
+
+What is training?
+    Process of teaching a model using data.
+
+What is testing?
+    Evaluating model performance on unseen data.
+
+What is overfitting?
+    Model learns training data too well and performs poorly on new data.
+
+What is underfitting?
+    Model fails to learn patterns properly.
+
+What is feature?
+    Input variable (e.g., age, salary).
+
+What is label?
+    Output/target value.
+
+What is accuracy?
+    Measure of correct predictions.    
+
+What is loss function?
+    Measures how wrong the model is.
+
+What is gradient descent?
+    Algorithm to minimize loss.
+
+What is epoch?
+    One full pass over training data.
+
+What is batch size?
+    Number of samples processed at once.
+
+What is embedding?
+    Converting words into vectors (numbers).
+
+What is LLM?
+    Large Language Model trained on huge text data.
+
+What is NLP
+    NLP (Natural Language Processing) is a field of AI that helps computers understand, 
+    process, and generate human language like text or speech.
+
+📊 Types of Machine Learning
+    1. Supervised Learning
+        Data + labels
+        Example: spam detection
+
+    2. Unsupervised Learning
+        No labels
+        Example: clustering
+        
+    3. Reinforcement Learning
+        Learn by reward/penalty
+        Example: game playing
+
 ReLU vs Sigmoid (Activation Functions)
     In neural networks, activation functions decide whether a neuron should be activated or not.
     
@@ -15,7 +100,7 @@ ReLU vs Sigmoid (Activation Functions)
         ReLU outputs the value directly if positive, otherwise 0.
         𝑓(𝑥)=max(0,𝑥)
         Output Range = [0, ∞)
-z
+
         Dying ReLU problem (neurons can become permanently 0)
         Works well in deep neural networks
         FAST
@@ -74,3 +159,23 @@ Why is the ReLU activation function generally preferred over Sigmoid in Deep Lea
         If 𝑥>0 → gradient = 1 ✅
         
         No shrinking of gradients → faster learning
+
+What is fine tuning?
+    Fine-tuning is a technique in machine learning where you take an already trained model 
+    and train it a little more on your specific data so it becomes better at your task.
+
+    🔁 Process (Basic Steps)
+        1. Load pre-trained model
+        2. Give your dataset (input + output pairs)
+        3. Train for a few epochs
+        4. Save model
+        5. Use it for predictions
+
+what is tokenizer?
+    A tokenizer is a tool in NLP that converts text into numbers (tokens) so a model can understand it.
+    
+    "Hello world"
+         ↓
+    ["Hello", "world"]  (tokens)
+         ↓
+    [15496, 995]       (token IDs)

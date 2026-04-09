@@ -1,0 +1,74 @@
+An algorithm is a step-by-step procedure to solve a problem.
+BFS and DFS are graph traversal algorithms used to explore nodes using Queue and Stack respectively
+
+BFS (Breadth First Search) → Level-wise
+DFS (Depth First Search) → Depth-wise
+
+1. BFS (Breadth First Search)
+    Explore nodes level by level
+    Uses Queue (FIFO - first in first out)
+
+🧠 Working code :
+    from collections import deque
+    def bfs(graph, start):
+        visited = set()
+        q = deque([start])
+
+        while q:
+            node = q.popleft()
+
+            if node not in visited:
+                print(node, end=" ")
+                visited.add(node)
+
+                for neighbor in graph[node]:
+                    if neighbor not in visited:
+                        q.append(neighbor)
+
+⏱ Time Complexity:
+    O(V + E)
+    (V = vertices, E = edges)
+
+
+2. DFS (Depth First Search)
+    Go as deep as possible first, then backtrack    
+    Stack (LIFO - Last in first out)
+
+🧠 Working code :
+    def dfs_iterative(graph, start):
+    visited = set()
+    stack = [start]
+
+    while stack:
+        node = stack.pop()
+
+        if node not in visited:
+            print(node, end=" ")
+            visited.add(node)
+
+            for neighbor in graph[node]:
+                stack.append(neighbor)
+
+⏱ Time Complexity:
+O(V + E)
+
+
+
+❓ Why BFS finds shortest path?
+=>  Because it explores level by level, so first time reaching node = shortest distance.
+
+❓ Why DFS not good for shortest path?
+=>  Because it may go deep in wrong direction first.
+
+❓ When to use DFS?
+=>  When solutions involve all possibilities
+=>  Example: maze, permutations
+
+❓ DFS can be implemented using?
+=>  Recursion or Stack
+
+❓ Which guarantees shortest path in unweighted graph?
+=>  BFS
+
+❓ DFS is useful for?
+=>  Cycle detection
