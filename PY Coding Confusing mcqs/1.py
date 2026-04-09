@@ -36,8 +36,11 @@ print(bool([]), bool([0]))
 # Even though it contains 0 (which is False individually), the list itself is not empty, so it is True.
 # Non-empty containers → True
 
-print([0], [False], [""])
+print(bool([0]), bool([False]), bool([""]))
 # True,True,True
+
+print([] == False)
+#False
 
 print(None == False)
 # False
