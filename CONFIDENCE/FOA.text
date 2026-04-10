@@ -1,0 +1,87 @@
+🚀 1. AI-Powered WhatsApp Food Ordering Automation
+
+🧠 Problem
+    Small food businesses struggle with:
+        “Small food businesses handle orders manually on WhatsApp, which leads to delays, 
+        errors, and poor customer experience.”
+        Keeping track of inventory
+
+💡 Solution
+    So, I built an AI-powered WhatsApp food ordering system that simulates a real-world 
+    restaurant assistant. The idea was to combine conversational AI with automation to 
+    create a seamless ordering experience without needing a traditional app or website.
+    The workflow starts when a user sends a message on WhatsApp. That message is captured 
+    using a webhook trigger, which acts as the entry point of the system. From there, 
+    the message is passed to an AI agent, which is basically the brain of the system. 
+    This agent uses a large language model along with a structured system prompt to understand 
+    what the user wants—whether it’s placing an order, asking a question, or checking stock.
+    One important thing I focused on was making the conversation feel natural and stateful. 
+    So I implemented a memory layer that stores the last few messages for each user using 
+    their WhatsApp number as a session ID. This allows the bot to handle multi-step interactions, 
+    like asking for the user’s name, then the food item, and then the quantity, instead of treating 
+    every message independently.
+
+    For data handling, I integrated Google Sheets as a lightweight database. I used separate sheets 
+    for inventory, FAQs, and orders. When a user places an order, the AI agent dynamically checks the 
+    inventory sheet to see if the item is available. If it is, the order gets confirmed and stored in 
+    the orders sheet with all the details like name, item, quantity, timestamp, and status. If the item 
+    is not available, the system gracefully handles it by informing the user and suggesting alternatives.
+
+    Similarly, for FAQs, instead of hardcoding responses, the system fetches answers from a sheet, 
+    which makes it easy to update information like delivery time or payment methods without changing 
+    the code.
+    
+    Once the response is generated, it’s sent back to the user via WhatsApp, completing the full loop.
+
+    What makes this project interesting is that it’s not just a chatbot—it’s actually a decision-making 
+    system that integrates real-time data, maintains context, and enforces business rules. 
+    It shows how AI can be combined with workflow automation tools to build practical, 
+    scalable solutions for real-world use cases like food ordering.
+
+🛠️ Tech Used
+    n8n (workflow automation)
+    LLM APIs (AI responses)
+    Google Sheets (database)
+    WhatsApp API
+
+
+🎯 Killer Questions
+
+Why n8n instead of Django/Node?
+    I chose n8n because it lets me quickly build event-driven workflows without 
+    writing a lot of backend code. It already has integrations like WhatsApp and Google Sheets, 
+    and supports LLMs. Using Django would require building APIs and logic from scratch, 
+    which takes more time.
+
+Real-world problem?
+    It simplifies food ordering for small businesses that don’t have apps. Customers can order 
+    directly via WhatsApp, and the system automates order handling, stock checking, and FAQs, 
+    reducing manual effort.
+
+How AI agent decides actions?
+    The AI agent uses a structured system prompt that defines rules and workflows. Based on user input, 
+    the LLM classifies intent and decides whether to fetch data, ask follow-up questions, 
+    or store orders.
+
+Incorrect inputs?
+    The AI asks clarifying questions or guides the user back to valid options.
+
+Why Google Sheets?
+    It’s simple, fast to integrate, and great for quick prototyping. But it also has limitations 
+    like poor scalability, limited concurrency control, slower performance with large data, 
+    lack of data validation,and it’s not ideal for handling complex queries If I move beyond 
+    prototyping, I would replace Google Sheets with a proper database like PostgreSQL or MongoDB..
+
+Scaling to 10,000 users?
+    To scale to 10,000 users, I’d move from Google Sheets to PostgreSQL, shift the logic into 
+    backend services, and deploy on a cloud platform with auto-scaling and load balancing. 
+    I’d also add caching to improve performance.
+
+What is Caching?
+    Caching is basically storing frequently used data temporarily 
+    so you don’t have to fetch or compute it again and again.
+
+What are the limitations of your system? (Bottle Necks)
+    Key bottlenecks would be LLM latency, Google Sheets API rate limits, lack of concurrency control, 
+    and slower performance as data grows. Additionally, network delays and workflow execution overhead 
+    in n8n can also impact response time.

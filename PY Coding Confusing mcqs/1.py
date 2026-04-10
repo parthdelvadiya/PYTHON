@@ -177,3 +177,6 @@ print(f.readline())
 
 # Which method moves cursor?
 # seek()
+
+# Time complexity of dictionary lookup?
+# O(1)

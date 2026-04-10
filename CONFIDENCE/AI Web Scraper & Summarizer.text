@@ -1,0 +1,58 @@
+AI Web Scraper & Summarizer
+
+So, this project is an end-to-end AI-based web scraper and summarizer that runs 
+completely locally using Python. The main goal was to automate the process of 
+extracting useful information from websites and converting long, unstructured 
+content into concise summaries.
+
+The system works in two main phases: training and inference. In the training phase, 
+I fine-tuned a transformer model—specifically T5-small—on the CNN/DailyMail dataset, 
+which contains news articles paired with human-written summaries. The idea behind 
+fine-tuning is that the model already understands language, but we specialize it for 
+summarization by training it on this specific task. During training, the model learns 
+to map long articles to shorter summaries by minimizing the difference between its output 
+and the actual human summaries.
+
+Once the model is trained, the inference pipeline is where the real functionality happens. 
+When a user provides a URL, the system first uses a scraper built with Requests and BeautifulSoup 
+to download and parse the webpage. Since raw HTML contains a lot of noise like scripts, styles, 
+and navigation elements, I implemented preprocessing steps to extract only meaningful text. This 
+step is critical because the quality of the input directly impacts the quality of the summary.
+
+After cleaning, the text is prepared for the model by adding a task-specific prefix like ‘summarize:’, 
+which is required for T5 since it’s a multi-task model. The text is then tokenized into numerical form 
+using SentencePiece so the model can process it.
+
+For long articles, I implemented a chunking mechanism that splits the text into smaller overlapping 
+segments, summarizes each chunk individually, and then combines them into a final summary. 
+This ensures the system can handle large inputs without running into memory limitations.
+
+The summarization itself is done using beam search, where instead of generating one possible output, 
+the model explores multiple candidate sequences and selects the best one, improving the overall quality 
+of the summary.
+
+What makes this project interesting is that it integrates multiple components—web scraping, 
+data preprocessing, model fine-tuning, and inference—into a single pipeline, all running locally 
+without relying on external APIs. It demonstrates not just model usage, but also how to build a 
+complete NLP system from data collection to final output.
+
+
+Why this project?
+    I wanted to build a complete NLP pipeline—from data extraction to model deployment—rather 
+    than just using pre-built APIs.
+
+How do you clean HTML?
+    I remove scripts, styles, and extract text from relevant tags like paragraphs.
+
+Why T5?
+    It’s flexible, text-to-text, and performs well on summarization.
+
+Abstractive vs extractive?
+    Abstractive—model generates new sentences, not just copies.
+
+What is fine-tuning?
+    Training a pre-trained model on a specific task dataset.
+
+Dataset used?
+    CNN/DailyMail summarization dataset.
+
