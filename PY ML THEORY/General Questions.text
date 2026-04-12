@@ -1,29 +1,3 @@
-What is AI?
-    Artificial Intelligence (AI) is the ability of machines to perform tasks that normally 
-    require human intelligence.
-
-What is Machine Learning (ML)?
-    ML is a subset of AI where machines learn from data instead of being explicitly programmed.
-    
-    Example:
-        Spam detection
-        Recommendation systems
-    Interview Answer:
-        “Machine Learning is a technique where systems learn patterns from data and 
-        improve their performance without explicit programming.”
-
-What is Deep Learning?
-    Deep Learning is a subset of ML that uses neural networks with many layers.
-    
-    Example:
-        Image recognition
-        Speech recognition
-        LLMs (like GPT)
-
-    ✅ Interview Answer:
-        “Deep Learning uses multi-layered neural networks to learn complex patterns 
-        from large amounts of data.”
-
 What is a model?
     A model is a mathematical function that learns patterns from data.
 
@@ -52,7 +26,7 @@ What is loss function?
     Measures how wrong the model is.
 
 What is gradient descent?
-    Algorithm to minimize loss.
+    Algorithm to minimize loss. 
 
 What is epoch?
     One full pass over training data.
@@ -69,19 +43,6 @@ What is LLM?
 What is NLP
     NLP (Natural Language Processing) is a field of AI that helps computers understand, 
     process, and generate human language like text or speech.
-
-📊 Types of Machine Learning
-    1. Supervised Learning
-        Data + labels
-        Example: spam detection
-
-    2. Unsupervised Learning
-        No labels
-        Example: clustering
-        
-    3. Reinforcement Learning
-        Learn by reward/penalty
-        Example: game playing
 
 ReLU vs Sigmoid (Activation Functions)
     In neural networks, activation functions decide whether a neuron should be activated or not.

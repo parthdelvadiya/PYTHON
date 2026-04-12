@@ -1,0 +1,117 @@
+What is AI?
+    Artificial Intelligence (AI) is the ability of machines to perform tasks that normally 
+    require human intelligence.
+
+    Making machines behave like humans
+    ex: Face unlock in your phone
+        Chatbots
+        Self-driving cars
+        Netflix recommendations
+
+What is Machine Learning (ML)?
+    ML is a subset of AI where machines learn from data instead of being manually programmed.
+    
+    Example:
+        Spam detection
+        Recommendation systems
+
+        💡 Real Example:
+            Spam Detection
+            Input: Emails
+            Output: Spam / Not Spam
+
+        👉 ML learns patterns like:
+            “Free money”
+            Too many links
+            Suspicious words
+
+    Interview Answer:
+        “Machine Learning is a technique where systems learn patterns from data and 
+        improve their performance without explicit programming.”
+
+What is Deep Learning?
+    Deep Learning is a subset of ML that uses neural networks with many layers.
+    Advanced ML using Neural Networks (brain-like structures)
+
+    Data is huge
+    Problem is complex
+
+    Example:
+        Image recognition
+        Speech recognition
+        LLMs (like GPT)
+
+    ✅ Interview Answer:
+        “Deep Learning uses multi-layered neural networks to learn complex patterns 
+        from large amounts of data.”
+
+    AI ⊃ ML ⊃ DL
+
+📊 Types of Machine Learning
+
+    1. Supervised Learning
+        Data + labels
+        Input + Correct Output
+
+        | Input (House Size) | Output (Price) |
+        | ------------------ | -------------- |
+        | 1000 sq ft         | ₹50 lakh       |
+        | 1500 sq ft         | ₹75 lakh       |
+
+        🔥 Key Pattern (Supervised)
+            👉 You ALWAYS have:
+                Input (X) (Data) → Output (Y) (labels)
+        Example: spam detection, House price prediction
+
+        Common Algorithms:
+            Linear Regression
+            Logistic Regression
+            KNN
+            Random Forest
+
+    2. Unsupervised Learning
+
+        👉 NO labels (no Y)
+        👉 Only data → model finds patterns
+
+        💡 Example:
+            📊 Example 1: Customer Segmentation
+
+            ✅ Dataset:
+            | Customer | Age | Income (₹) | Spending Score |
+            | -------- | --- | ---------- | -------------- |
+            | A        | 22  | 20K        | 80             |
+            | B        | 45  | 80K        | 20             |
+            | C        | 25  | 25K        | 75             |
+            | D        | 50  | 90K        | 15             |
+
+            🤖 Model Output (Clustering):
+
+            👉 It groups like this:
+                Group 1: Young + low income + high spending
+                Group 2: Older + high income + low spending
+
+        Common Algorithms:
+            K-Means Clustering
+            Hierarchical Clustering
+
+
+| Feature | Supervised       | Unsupervised      |
+| ------- | ---------------- | ----------------- |
+| Labels  | ✅ Yes           | ❌ No            |
+| Goal    | Predict output   | Find patterns     |
+| Example | Price prediction | Customer grouping |
+        
+    
+    3. Reinforcement Learning (Advanced)
+        👉 Learning by trial and error (like a game)
+        
+        💡 Example:
+            Game playing AI:
+                Move → Reward or penalty
+                Learns best strategy over time
+
+            Used in:
+                Robotics
+                Self-driving
+                Game AI (like Chess)

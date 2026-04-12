@@ -1,0 +1,71 @@
+(IMP) → Must know (high interview probability)
+(IFML) → Important for ML (good to know, sometimes asked)
+(NSI) → Not so important (rare for freshers, advanced use)
+
+🧠 1. Supervised Learning Algorithms
+    Used when you have input (X) + output (Y)
+
+    A. Regression Algorithms (Predict numbers)
+        Output = Continuous value (price, salary, etc.)
+        👉 Goal: Predict a continuous value (number)
+
+        🔹 Algorithms:
+    
+            Linear Regression → (IMP) ⭐
+            Polynomial Regression → (IFML)
+
+            Ridge Regression → (NSI)
+            Lasso Regression → (NSI)
+            ElasticNet → (NSI)
+
+    B. Classification (Core ML) (Predict Categories)
+        👉 Goal: Predict class/label (Yes/No, Spam/Not Spam)
+
+        🔹 Algorithms:
+
+            Logistic Regression → (IMP) ⭐
+            K-Nearest Neighbors (KNN) → (IMP) ⭐
+
+            Naive Bayes → (NSL)
+
+    C. Tree-Based Models
+        👉 Models that make decisions like a tree (flowchart)
+            They split data step-by-step using conditions like:
+                Is Age > 30?
+                Is Income > 50K?
+
+        🔹 Algorithms:
+
+            Decision Tree → (IMP) ⭐
+            Random Forest → (IMP) ⭐ (Collection of multiple decision trees)
+
+            Gradient Boosting → (NSL)
+
+    D. Boosting Algorithms (Industry Level)
+
+        🔹 Algorithms:
+
+            XGBoost → (IFML) ⭐ (very popular in real-world)
+
+    E. Support Vector
+
+        🔹 Algorithms:
+
+            Support Vector Machine (SVM) → (IMP) ⭐
+
+🧠 Neural Networks (ML → DL Bridge)
+    Artificial Neural Network (ANN) → (IFML)
+    CNN (Convolutional Neural Network) → (IFML)
+    RNN (Recurrent Neural Network) → (NSI)
+    LSTM / GRU → (NSI)
+
+🧠 2. Unsupervised Learning Algorithms
+    
+    A. Clustering 
+        👉 Goal: Group similar data
+
+        K-Means Clustering → (IMP) ⭐
+        Hierarchical Clustering → (IMP) ⭐
+
+    B. Dimensionality Reduction
+        PCA (Principal Component Analysis) → (IMP) ⭐
