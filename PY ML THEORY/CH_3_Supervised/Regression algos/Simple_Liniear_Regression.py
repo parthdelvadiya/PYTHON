@@ -10,7 +10,9 @@
 # One input feature 
 # 
 # y = mx + b
-# m = coefficient (weight)
+# x → the input (what you control or choose)
+# y → the output (what you get)
+# m = Slope, coefficient (weight)
 # b = intercept (bias)
 # 
 # 2. Multiple Linear Regression
@@ -201,3 +203,33 @@ else:
 
 # model.predict(X_test)
 # Model is tested on unseen data
+
+
+
+#Interview ready  
+# Simple Linear Regression is a supervised learning algorithm used to model the 
+# relationship between one independent variable and one dependent variable by fitting a straight line.
+
+# How does the model learn?
+# The model learns by minimizing the difference between actual and predicted values using a 
+# loss function like Mean Squared Error.
+
+# Why do we use MSE instead of MAE?
+# MSE is used because it penalizes larger errors more than smaller ones, making the model sensitive to 
+# significant mistakes and easier to optimize mathematically.
+
+# What is the role of slope (m)?
+# The slope represents how much the dependent variable changes for a one-unit 
+# increase in the independent variable.
+
+# What is intercept (b)?
+# It is the value of the target variable when the input feature is zero.
+
+# What is overfitting in linear regression?
+# Overfitting occurs when the model learns noise from training data and 
+# performs poorly on unseen data.
+# Rare in simple linear regression
+# More common in complex models
+
+# What is underfitting?
+# Underfitting occurs when the model is too simple to capture the underlying pattern in the data.
