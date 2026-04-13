@@ -283,6 +283,18 @@ Solution:
 - Remove correlated features  
 - Use Regularization (Ridge / Lasso)  
 
+Detection Methods
+1. Correlation Matrix (Most common)
+
+You check how features relate to each other.
+
+import pandas as pd
+
+corr = df.corr()
+print(corr)
+If correlation is:
+
+if > 0.8 or < -0.8 → strong multicollinearity ⚠️
 ---
 
 ## 9. Important Interview Questions with Strong Explanations
