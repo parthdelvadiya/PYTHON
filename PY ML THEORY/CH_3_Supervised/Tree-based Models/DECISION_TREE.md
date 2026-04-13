@@ -35,6 +35,11 @@ Is Age > 30?
 
 The tree keeps splitting until it reaches pure or nearly pure groups.
 
+Leaf nodes (end nodes)
+Contain:
+Class counts (e.g., Yes=3, No=1)
+✅ Final prediction = majority class
+
 ---
 
 ## 3. Important Terminology

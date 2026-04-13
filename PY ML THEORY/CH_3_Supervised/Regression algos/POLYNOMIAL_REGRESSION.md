@@ -2,6 +2,12 @@
 
 ---
 
+| Type            | X Shape | y Shape |
+| --------------- | ------- | ------- |
+| Simple Linear   | (n, 1)  | (n,)    |
+| Multiple Linear | (n, m)  | (n,)    |
+| Polynomial      | (n, d)  | (n,)    |
+
 ## 1. What is Polynomial Regression?
 
 Polynomial Regression is an extension of Linear Regression used to model **non-linear relationships** between the independent variable(s) and the dependent variable.
