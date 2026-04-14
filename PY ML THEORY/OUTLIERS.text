@@ -1,0 +1,86 @@
+What are Outliers?
+    Outliers = extreme values that are very different from other data
+
+[10, 12, 15, 18, 20, 500]
+500 --> Outlier
+
+Why are Outliers a Problem? 
+    Affect mean, variance
+    Can reduce accuracy
+
+How to Detect Outliers
+    IQR Method (Most Important ⭐)
+
+        Find Quartiles:
+
+            Q1 = 25%
+            Q3 = 75%
+
+        Compute:
+            IQR=Q3−Q1
+
+        Define bounds:
+
+            Lower = Q1 − 1.5 × IQR
+            Upper = Q3 + 1.5 × IQR
+
+Q1 = df['salary'].quantile(0.25)
+Q3 = df['salary'].quantile(0.75)
+
+IQR = Q3 - Q1
+
+lower = Q1 - 1.5 * IQR
+upper = Q3 + 1.5 * IQR
+
+outliers = df[(df['salary'] < lower) | (df['salary'] > upper)]
+
+
+
+salary = [10, 12, 15, 18, 20, 100]
+
+✅ Step 1: Find Q1 (25%)
+    Q1 = df['salary'].quantile(0.25)
+
+Data is sorted:
+[10, 12, 15, 18, 20, 100]
+    25% position → between 1st & 2nd value
+        👉 Q1 ≈ 12–13
+
+✅ Step 2: Find Q3 (75%)
+    Q3 = df['salary'].quantile(0.75)
+
+    75% position → near upper side
+        👉 Q3 ≈ 18–20
+
+✅ Step 3: Compute IQR
+    IQR = Q3 - Q1
+
+👉 Example:
+    Q3 = 20  
+    Q1 = 12  
+    IQR = 8
+
+✅ Step 4: Define Bounds
+
+    lower = Q1 - 1.5 * IQR
+    upper = Q3 + 1.5 * IQR
+
+👉 Why 1.5?
+    It’s a statistical rule to detect extreme values
+
+Calculate:
+    lower = 12 - (1.5 × 8) = 12 - 12 = 0  
+    upper = 20 + (1.5 × 8) = 20 + 12 = 32
+
+✅ Step 5: Detect Outliers
+    df[(df['salary'] < lower) | (df['salary'] > upper)]
+
+👉 Meaning:
+
+Check each value:
+10 → OK  
+12 → OK  
+15 → OK  
+18 → OK  
+20 → OK  
+100 → ❌ OUTLIER

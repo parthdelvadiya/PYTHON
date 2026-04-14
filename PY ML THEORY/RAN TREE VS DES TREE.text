@@ -1,0 +1,31 @@
+Basic Difference
+
+👉 Decision Tree
+= Single tree
+
+👉 Random Forest
+= Many trees (forest)
+
+🌳 Decision Tree
+Builds one tree
+Makes decision based on one path
+Final prediction = leaf node result
+
+🌲 Random Forest
+Builds multiple trees
+Each tree gives prediction
+Final prediction = majority vote / average
+
+| Feature          | Decision Tree | Random Forest |
+| ---------------- | ------------- | ------------- |
+| Number of models | 1             | Many          |
+| Accuracy         | Lower         | Higher        |
+| Overfitting      | High ❌      | Low ✅        |
+| Stability        | Unstable      | Stable        |
+| Speed            | Fast          | Slower        |
+| Interpretability | Easy          | Hard          |
+
+
+“A decision tree is a single model that can easily overfit the data, 
+while a random forest is an ensemble of multiple decision trees that 
+reduces overfitting by averaging their predictions, resulting in better accuracy and stability.”

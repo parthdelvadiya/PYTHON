@@ -1,0 +1,63 @@
+What is get_dummies()?
+    get_dummies() is a function in pandas that:
+        Converts categorical (text) data into numerical (0/1) format
+
+        It uses One-Hot Encoding
+        ML models cannot understand text They only understand numbers
+
+
+| Gender |
+| ------ |
+| Male   |
+| Female |
+| Male   |
+
+pd.get_dummies(df['Gender'])
+
+| Male | Female |
+| ---- | ------ |
+| 1    | 0      |
+| 0    | 1      |
+| 1    | 0      |
+
+What’s the issue?
+
+👉 Look carefully:
+    If you know:
+        Male = 1
+    You automatically know:
+        Female = 0
+So:
+👉 Female column = 1 - Male column
+
+One column is completely dependent on another
+
+This is called:
+    MULTICOLLINEARITY
+
+It causes:
+    Confusion in coefficients
+
+SOLUTION:
+    pd.get_dummies(df, drop_first=True)
+
+“Dummy variable trap occurs when one encoded variable can be 
+predicted from others, causing multicollinearity. We avoid it by 
+dropping one dummy column using drop_first=True.”
+
+
+| Concept     | Meaning                        |
+| ----------- | ------------------------------ |
+| get_dummies | Converts categorical → numeric |
+| Technique   | One-hot encoding               |
+| Output      | 0s and 1s                      |
+| Use case    | ML models                      |
+
+
+“get_dummies is a pandas function used for one-hot encoding, 
+which converts categorical variables into numerical format by 
+creating binary columns for each category. It is used when dealing 
+with categorical data in machine learning.”
+
+What is One-Hot Encoding?
+👉 One-Hot Encoding = converting categories into 0s and 1s

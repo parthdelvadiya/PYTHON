@@ -1,0 +1,51 @@
+Data Cleaning (Fixing Problems)
+
+Focus: remove errors & inconsistencies
+
+What we clean
+
+🔹 Missing Values
+    Example: Age = NULL
+        
+        ✅ Solutions:
+            Fill (mean/median/mode)
+            Drop rows
+            df.dropna()
+            df.fillna(df.mean())      # numerical
+            df.fillna(df.mode())      # categorical
+
+🔹 Duplicate Data
+    Same row repeated
+
+    ✅ Solution:
+        Remove duplicates
+        df.drop_duplicates()
+
+🔹 Incorrect Data
+    Example: Age = -5
+
+        ✅ Fix or remove
+            df['age'] = df['age'].abs()
+            df['salary'] = pd.to_numeric(df['salary'], errors='coerce')
+
+🔹 Outliers
+    Extreme values
+    
+    ✅ Handle:
+        Remove Using IQR or Z-score
+        Cap --> df['salary'] = df['salary'].clip(lower=1000, upper=100000)
+
+
+5. Standardize Text Data
+    df['city'] = df['city'].str.lower().str.strip()
+
+
+| Problem            | Method            |
+| ------------------ | ----------------- |
+| Missing values     | drop / fill       |
+| Duplicates         | drop_duplicates   |
+| Wrong data         | correct / convert |
+| Outliers           | remove / cap      |
+| Text inconsistency | lower, strip      |
+| Data types         | astype            |
+| Irrelevant columns | drop              |
