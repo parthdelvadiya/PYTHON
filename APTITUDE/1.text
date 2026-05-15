@@ -1,0 +1,87 @@
+Simple Interest
+SI = P×R×T / 100
+
+Compound Interest
+A = P(1 + r/100​) ^ n
+
+A boat takes 4 hrs downstream and 6 hrs upstream for same distance. Find ratio of speeds.
+Solution:
+Let distance = D
+Downstream speed = D/4
+Upstream speed = D/6
+Boat speed = (D/4 + D/6)/2 = (3D + 2D)/12 = 5D/12 ÷ 2 = 5D/24
+Stream speed = (D/4 − D/6)/2 = (3D − 2D)/12 = D/12 ÷ 2 = D/24
+👉 Ratio (Boat : Stream) = 5 : 1
+
+Price increased by 20% then decreased by 10%
+Net = 20 − 10 − (20×10)/100
+= 10 − 2 = 8% increase
+
++50% then −50% ≠ 0
+Net = 50 − 50 − (2500/100) = −25%
+👉 Final = 25% loss
+
+Average of 10 numbers is 50. One number replaced by 80, new avg = 52. Find replaced number.
+Old total = 500
+New total = 520
+Difference = 20
+👉 Replaced number = 80 − 20 = 60
+
+A 40L mixture has milk & water in ratio 3:1.
+10L is removed and replaced with water. Find final milk.
+Initial milk = 30L
+(3/4 * 40)
+When you remove mixture, you remove milk and water in the same ratio (3:1)
+So milk removed = 3/4 × 10 = 7.5 L
+30 − 7.5 = 22.5 L
+
+
+A vessel has 100L milk.
+10L removed and replaced with water, repeated twice.
+Milk left =
+= 100 × (90/100)²
+= 100 × (0.9)²
+= 81L
+👉 Shortcut:
+Final = Initial × (1 − removed/total)ⁿ
+
+
+Speed of boat in still water = b
+Speed of stream = s
+Downstream (with current) : b + s
+Upstream (against current): b − s
+
+
+Probability of A OR B:
+P(A∪B) = P(A) + P(B) − P(A∩B)
+
+Probability of A AND B:
+P(A∩B) = P(A) × P(B)
+
+P(B∣A) = P(A∩B)​ / P(A)
+
+Permutation
+    Order matters
+    arrangements
+    seating
+    rankings
+
+nPr ​= n! / (n-r)!​
+
+
+Combination
+    Order does NOT matter
+    selection
+    choosing teams
+
+nCr ​= n!​ / r!(n−r)!
+
+
+From 5 students, how many ways can a team of 2 students be selected?
+=> 5C2
+
+
+How many different words can be formed using letters of “APPLE”?
+= 5!/2!	​
+= 120/2
+= 60

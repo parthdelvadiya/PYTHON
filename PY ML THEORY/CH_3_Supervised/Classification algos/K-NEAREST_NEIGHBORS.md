@@ -368,4 +368,4 @@ It is simple, non-parametric, and effective for small datasets but computational
 
 Feature scaling is very important in KNN.
 
-Choosing optimal K is critical to balance bias and variance.
+Choosing optimal K is critical to balance bias and variance.    
