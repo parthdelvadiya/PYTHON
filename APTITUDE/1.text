@@ -45,12 +45,10 @@ Milk left =
 👉 Shortcut:
 Final = Initial × (1 − removed/total)ⁿ
 
-
 Speed of boat in still water = b
 Speed of stream = s
 Downstream (with current) : b + s
 Upstream (against current): b − s
-
 
 Probability of A OR B:
 P(A∪B) = P(A) + P(B) − P(A∩B)
@@ -59,6 +57,7 @@ Probability of A AND B:
 P(A∩B) = P(A) × P(B)
 
 P(B∣A) = P(A∩B)​ / P(A)
+===================================================>
 
 Permutation
     Order matters
@@ -68,14 +67,12 @@ Permutation
 
 nPr ​= n! / (n-r)!​
 
-
 Combination
     Order does NOT matter
     selection
     choosing teams
 
 nCr ​= n!​ / r!(n−r)!
-
 
 From 5 students, how many ways can a team of 2 students be selected?
 => 5C2
@@ -85,3 +82,123 @@ How many different words can be formed using letters of “APPLE”?
 = 5!/2!	​
 = 120/2
 = 60
+==================================================>
+
+
+Circular Permutation (Frequently Asked)
+In how many ways can 6 people sit around a round table?
+=> (6-1)!
+=======================================================>
+
+
+What day comes 200 days after Sunday?
+200 ÷ 7 → remainder 4
+Sunday + 4 = Thursday
+
+✅ Thursday
+==================================================>
+
+
+What day was 200 days ago if today is Sunday?
+Sunday - 4 = Wednesday
+===============================================>
+
+
+A pipe fills tank in 8 hours.
+Another empties it in 12 hours.
+How much time together?
+
+1/8 - 1/12 = 1/24
+
+fills in 24 hours 
+==============================================>
+
+
+A can complete a work in 20 days and B in 30 days.
+They work together for 6 days. Then A leaves.
+In how many more days will B finish the remaining work?
+
+A = 1/20 , B = 1/30
+1/20 + 1/30 = 1/12 
+1/12 * 6 = 1/2 
+1 - 1/2 = 1/2 
+1/2 / 1/30 = 15 
+==============================================>
+
+
+12 men can complete a work in 15 days.
+After 5 days, 6 more men joined.
+In how many total days will the work finish?
+
+12 × 15 = 180 units
+in 5 days Total work = 60 units
+180 - 60 = 120 remaining
+
+after 6 days total workers = 18
+Time needed = 120 / 18
+==============================================>
+
+
+A is twice as efficient as B.
+Together they complete work in 12 days.
+Find time taken individually.
+
+A:B = 2:1
+2x + x = 3x
+Total work in 12 Days = 12 * 3x = 1
+x = 1/36
+B = 36 days
+A = 18 days
+==============================================>
+
+
+A can finish work in 10 days.
+B can finish in 15 days.
+They work alternately starting with A.
+How many days to finish work?
+
+A = 1/10
+B = 1/15
+A + B = 1/6
+every 2 days = 1/6
+
+1/6 * 6 = 1
+6 = 12 days
+==============================================>
+
+A invests ₹50,000 and B invests ₹30,000.
+Annual profit = ₹16,000.
+Find each share.
+
+Total = 80000 
+A = 5/8
+B = 3/8
+A = 16000 * 5/8 = 10000
+B = 16000 * 3/8 = 6000
+==============================================>
+
+A invests ₹40,000 for 12 months.
+B invests ₹60,000 for 8 months.
+Profit = ₹17,200.
+Find shares.
+
+A = 12*40000 = 480000
+B = 8*60000 = 480000
+
+A = B = 17200/2
+1:1
+==============================================>
+
+A starts business with ₹80,000.
+After 4 months, B joins with ₹60,000.
+At year end, profit = ₹26,400.
+
+Find shares.
+
+A = 80000*12 = 960000
+B = 60000*8 = 480000
+
+96:48 = 2:1
+
+A = 26400 * 2/3 = 17600
+B = 26400 * 1/3 = 8800
