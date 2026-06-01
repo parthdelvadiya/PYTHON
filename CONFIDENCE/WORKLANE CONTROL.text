@@ -1,0 +1,71 @@
+Worklane Control
+
+Worklane Control is an end-to-end project management, employee tracking, 
+and marketing automation platform that runs locally. 
+The main goal was to build a system that bridges developer workflow (via GitHub integration) 
+and business outreach (via AI-driven poster generation and social media sharing) into a single, 
+cohesive dashboard.
+
+The system is split into two primary components: 
+a backend REST API and an interactive frontend dashboard. 
+The backend is built using Django and Django REST Framework (DRF), 
+utilizing SQLite for lightweight local storage and SimpleJWT for secure, 
+token-based user authentication. To protect user privacy, the database schema implements 
+multi-tenancy where all resources (employees, projects, tasks, generated posters, 
+and social media credentials) are explicitly bound to a Django User model, 
+ensuring users can only access or modify their own data.
+
+Once a user signs in, the frontend application—built with React, Vite, 
+Tailwind CSS v4, and Framer Motion—renders a dark, glassmorphic UI. 
+The dashboard page aggregates real-time metrics including total employee counts, 
+active project progress bars, upcoming or overdue deadlines, and project status distributions.
+
+What makes this project unique is its integration of background automation and external APIs:
+1. GitHub Automation: The backend runs an APScheduler background worker that polls GitHub's 
+API every minute for repositories linked to active projects. It scans commit messages written 
+over the last 7 days; if a commit message matches a project task name, the task is automatically 
+marked as completed in the database.
+2. AI Poster Generator: Under the marketing suite, the user can input text prompts and select metadata 
+(industry, style, and tone). The backend connects to a HuggingFace space (Pollinations Image Generator)
+via a Gradio client to build an image. The model then saves the output locally, uploads it to Cloudinary, 
+and retrieves a secure, shareable public URL.
+3. Social Media Publishing: Users can save Facebook and Instagram credentials. Once a poster is 
+generated, the backend uses Facebook's Graph API v17.0 to publish the asset directly to the user's 
+linked Facebook Page or Instagram feed with a custom caption, executing the entire lifecycle from prompt 
+to social media post with a single click.
+
+
+Why this project?
+    I wanted to build a complete, production-like pipeline—from developer workflow 
+    automation to automated marketing content generation and distribution—rather 
+    than just managing tasks in a static list.
+
+How does the GitHub task tracking work?
+    A Django app ready signal starts an APScheduler background scheduler. 
+    Every minute, it identifies projects with a GitHub repository URL, 
+    queries the GitHub API for commits from the last 7 days, and checks if 
+    commit messages match existing task names. If they match, it updates the 
+    task status to completed.
+
+Why Django and React?
+    Django provides robust security, built-in admin panels, 
+    and rapid API development tools, while React (powered by Vite) enables us 
+    to build a fast, highly animated, and modern single-page dashboard.
+
+How is the AI poster generated?
+    We use the Gradio Client in Python to query a HuggingFace Space hosting the 
+    Pollinations Image Generator. The prompt is dynamically optimized on the 
+    backend based on the industry, style, and tone selected by the user.
+
+How does the JWT token refresh work?
+    The frontend Axios instance contains response interceptors. 
+    If a request fails with a 401 (Unauthorized) status due to an expired 
+    access token, the interceptor automatically sends a refresh token request 
+    to the backend, stores the new access token in localStorage, and retries 
+    the original request without user interruption.
+
+What APIs are used for social sharing?
+    We use the Facebook Graph API (v17.0) to directly publish photo nodes to 
+    Facebook Pages, and the Instagram Graph API for a two-step process: creating 
+    a media container using the public Cloudinary image URL, and then publishing 
+    the container to the Instagram feed.
