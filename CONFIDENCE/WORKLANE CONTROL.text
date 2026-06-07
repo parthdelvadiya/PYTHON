@@ -1,71 +1,111 @@
-Worklane Control
+# Worklane Control
 
-Worklane Control is an end-to-end project management, employee tracking, 
-and marketing automation platform that runs locally. 
-The main goal was to build a system that bridges developer workflow (via GitHub integration) 
-and business outreach (via AI-driven poster generation and social media sharing) into a single, 
-cohesive dashboard.
+Worklane Control is a project management and employee tracking platform 
+that also helps businesses create and share marketing content from one dashboard.
 
-The system is split into two primary components: 
-a backend REST API and an interactive frontend dashboard. 
-The backend is built using Django and Django REST Framework (DRF), 
-utilizing SQLite for lightweight local storage and SimpleJWT for secure, 
-token-based user authentication. To protect user privacy, the database schema implements 
-multi-tenancy where all resources (employees, projects, tasks, generated posters, 
-and social media credentials) are explicitly bound to a Django User model, 
-ensuring users can only access or modify their own data.
+The idea behind the project was to connect development work and business marketing 
+into a single system. Instead of using multiple tools, users can manage employees, 
+projects, tasks, and marketing activities from one place.
 
-Once a user signs in, the frontend application—built with React, Vite, 
-Tailwind CSS v4, and Framer Motion—renders a dark, glassmorphic UI. 
-The dashboard page aggregates real-time metrics including total employee counts, 
-active project progress bars, upcoming or overdue deadlines, and project status distributions.
+## Technologies Used
 
-What makes this project unique is its integration of background automation and external APIs:
-1. GitHub Automation: The backend runs an APScheduler background worker that polls GitHub's 
-API every minute for repositories linked to active projects. It scans commit messages written 
-over the last 7 days; if a commit message matches a project task name, the task is automatically 
-marked as completed in the database.
-2. AI Poster Generator: Under the marketing suite, the user can input text prompts and select metadata 
-(industry, style, and tone). The backend connects to a HuggingFace space (Pollinations Image Generator)
-via a Gradio client to build an image. The model then saves the output locally, uploads it to Cloudinary, 
-and retrieves a secure, shareable public URL.
-3. Social Media Publishing: Users can save Facebook and Instagram credentials. Once a poster is 
-generated, the backend uses Facebook's Graph API v17.0 to publish the asset directly to the user's 
-linked Facebook Page or Instagram feed with a custom caption, executing the entire lifecycle from prompt 
-to social media post with a single click.
+* Backend: Django, Django REST Framework (DRF)
+* Database: SQLite
+* Authentication: JWT (JSON Web Tokens)
+* Frontend: React, Vite, Tailwind CSS, Framer Motion
+
+## Main Features
+
+### 1. Project and Employee Management
+
+Users can create and manage employees, projects, and tasks. The dashboard provides 
+useful information such as:
+
+* Total employees
+* Active projects
+* Project progress
+* Upcoming deadlines
+* Task status overview
+
+### 2. GitHub Task Automation
+
+The system can connect to GitHub repositories linked to projects.
+
+It automatically checks recent commits and compares commit messages 
+with task names. If a developer completes a task and mentions it in a 
+commit message, the system can automatically mark that task as completed.
+
+This reduces manual updates and helps keep project progress accurate.
+
+### 3. AI Poster Generation
+
+Users can generate marketing posters by simply entering a prompt and selecting options such as:
+
+* Industry
+* Style
+* Tone
+
+The system uses an AI image generation service to create posters automatically 
+and provides a shareable image link.
+
+### 4. Social Media Publishing
+
+After generating a poster, users can publish it directly to Facebook and Instagram 
+from the dashboard.
+
+This removes the need to manually download and upload marketing content on different platforms.
+
+### 5. Secure User Data
+
+Each user's data is kept separate and secure. Users can only access their own 
+employees, projects, tasks, posters, and social media settings.
+
+---
 
 
-Why this project?
-    I wanted to build a complete, production-like pipeline—from developer workflow 
-    automation to automated marketing content generation and distribution—rather 
-    than just managing tasks in a static list.
+## Why I Built This Project
 
-How does the GitHub task tracking work?
-    A Django app ready signal starts an APScheduler background scheduler. 
-    Every minute, it identifies projects with a GitHub repository URL, 
-    queries the GitHub API for commits from the last 7 days, and checks if 
-    commit messages match existing task names. If they match, it updates the 
-    task status to completed.
+I wanted to build something more than a simple task management application.
 
-Why Django and React?
-    Django provides robust security, built-in admin panels, 
-    and rapid API development tools, while React (powered by Vite) enables us 
-    to build a fast, highly animated, and modern single-page dashboard.
+My goal was to create a complete workflow where:
 
-How is the AI poster generated?
-    We use the Gradio Client in Python to query a HuggingFace Space hosting the 
-    Pollinations Image Generator. The prompt is dynamically optimized on the 
-    backend based on the industry, style, and tone selected by the user.
+* Developers can track project progress automatically through GitHub.
+* Businesses can generate marketing content using AI.
+* Marketing content can be published directly to social media.
 
-How does the JWT token refresh work?
-    The frontend Axios instance contains response interceptors. 
-    If a request fails with a 401 (Unauthorized) status due to an expired 
-    access token, the interceptor automatically sends a refresh token request 
-    to the backend, stores the new access token in localStorage, and retries 
-    the original request without user interruption.
+This creates a single platform that supports both project management and business promotion.
 
-What APIs are used for social sharing?
-    We use the Facebook Graph API (v17.0) to directly publish photo nodes to 
-    Facebook Pages, and the Instagram Graph API for a two-step process: creating 
-    a media container using the public Cloudinary image URL, and then publishing 
-    the container to the Instagram feed.
+---
+
+## Common Interview Questions
+
+### What problem does this project solve?
+
+It combines project management, employee tracking, AI content generation, 
+and social media publishing into one platform, reducing the need for multiple tools.
+
+### How does the GitHub integration work?
+
+The system regularly checks project repositories for recent commits. I
+f a commit message matches a task, the task is automatically marked as completed.
+
+### Why did you choose Django and React?
+
+Django helped me quickly build secure APIs and backend functionality, 
+while React allowed me to create a fast and interactive user interface.
+
+### How does the AI poster feature work?
+
+Users provide a prompt and select preferences like style and industry. 
+The system sends this information to an AI image generation service, 
+which creates a marketing poster.
+
+### How does authentication work?
+
+The application uses JWT authentication. Users receive access and refresh 
+tokens when they log in, which helps maintain secure sessions.
+
+### What was the most interesting part of the project?
+
+The automation workflow. A task can move from GitHub development activity to project 
+tracking and then into AI-generated marketing content, all within a single platform.
